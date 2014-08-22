@@ -16,3 +16,8 @@ class ResWindow(QtWidgets.QDialog):
 	def on_close(self):
 		self.hide()
 		self.closeSig.emit()
+
+	def closeEvent(self, e):
+		self.hide()
+		self.closeSig.emit()
+		e.ignore()

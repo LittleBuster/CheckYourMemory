@@ -3,7 +3,7 @@
 
 import mainWnd
 from checker import Checker
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtGui
 
 class MainWindow(QtWidgets.QWidget):
 	def __init__(self, parent=None):
@@ -53,6 +53,7 @@ class MainWindow(QtWidgets.QWidget):
 
 			self.checker.add_digit( count )
 			self.ui.pbCheck.setText("Далее")
+			self.ui.pbCheck.setIcon(QtGui.QIcon("images/next_8028.ico"))			
 			return
 		else:
 			if not self.checker.isError:
@@ -60,4 +61,5 @@ class MainWindow(QtWidgets.QWidget):
 			else:
 				self.ui.lbRes.setText("")
 				self.checker.isError = False
+			self.ui.pbCheck.setIcon(QtGui.QIcon("images/apply_5183.ico"))
 			self.ui.pbCheck.setText("Ответить")
